@@ -1,3 +1,25 @@
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(starship init zsh)"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+HISTFILE=~/.zsh_history
+# Number of lines kept in memory
+HISTSIZE=10000
+# Number of lines saved to the file
+SAVEHIST=10000
+# Append to history instead of overwriting
+setopt APPEND_HISTORY
+# Share history across all terminal sessions
+setopt SHARE_HISTORY
+
+# NVIDIA & Performance Aliases
+alias gpu-stat='watch -n 1 nvidia-smi'
+alias gpu-full='__GL_SYNC_TO_VBLANK=0 prime-run'
+alias sign-all='sudo zbook-sync'
+alias battery='sudo tlp-stat -b'
+
+# PAI System Alias
+alias pai='bun /home/l33tch/dev/PAI_Upstream/Personal_AI_Infrastructure/PAI/Tools/pai.ts'
+alias gcommit='/home/l33tch/dev/ninteyone_vault/90_System/Scripts/gcommit.sh'
